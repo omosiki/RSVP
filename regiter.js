@@ -47,7 +47,7 @@ form.addEventListener("submit", async (e) => {
         }
 
         // Upload file
-        const fileRef = storageRef(storage, "applications/" + fileUpload.name);
+        const fileRef = storageRef(storage, "applications/" + Date.now() + "_" + fileUpload.name);
         await uploadBytes(fileRef, fileUpload);
         const fileURL = await getDownloadURL(fileRef);
 
